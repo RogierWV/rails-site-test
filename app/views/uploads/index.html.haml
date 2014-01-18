@@ -1,37 +1,8 @@
 %h1 Listing uploads
 
-%table
-  %tr
-    %th Title
-    %th Description
-    %th Img
-    %th Uploaded
-    %th
-    %th.admin
-    %th.admin
-
-  - @uploads.each do |upload|
-    %tr
-      %td= upload.title
-      %td= upload.description
-      %td= upload.img
-      %td= upload.uploaded
-      %td= link_to 'Show', upload
-      %td.admin= link_to 'Edit', edit_upload_path(upload)
-      %td.admin= link_to 'Destroy', upload, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
+- @uploads.each do |upload|
+  = link_to popup_path(upload), class: :ajax_popup_link do
+    = upload.title
+  %br
 
 .admin= link_to 'New Upload', new_upload_path
-
-#randomimages
-  %a.img{:href => image_path("bird.jpg")}
-    %img{:src => image_path("bird.jpg"), :alt => "bird"}
-  %a.img{:href => image_path("hole.jpg")}
-    %img{:src => image_path("hole.jpg"), :alt => "hole"}
-  %a.img{:href => image_path("pretty.jpg")}
-    %img{:src => image_path("pretty.jpg"), :alt => "pretty"}
-  %a.img{:href => image_path("redtruck.jpg")}
-    %img{:src => image_path("redtruck.jpg"), :alt => "redtruck"}
-  %a.img{:href => image_path("sunset.jpg")}
-    %img{:src => image_path("sunset.jpg"), :alt => "sunset"}

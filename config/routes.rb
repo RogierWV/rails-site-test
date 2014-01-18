@@ -6,9 +6,11 @@ Gallery::Application.routes.draw do
   resources :uploads
   
   root 'welcome#index'
+  get :welcome, to: 'welcome#index', as: :home
   get :contact, to: 'contact#index', as: :contact
   get :about, to: 'about#index', as: :about
   get :commisions, to: 'commisions#index', as: :commisions
+  get 'uploads/popup/:id', to: 'uploads#popup', as: :popup
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

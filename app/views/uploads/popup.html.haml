@@ -1,0 +1,14 @@
+.ajax-popup
+  %p#notice= notice
+
+  %p
+    %h2= @upload.title
+  
+  %p
+    temp image tag placeholder
+    -# image_tag @upload.img
+  
+  %p
+    = @upload.description
+  
+  = link_to :Show, @upload

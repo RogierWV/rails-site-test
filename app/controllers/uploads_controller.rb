@@ -1,5 +1,5 @@
 class UploadsController < ApplicationController
-  before_action :set_upload, only: [:show, :edit, :update, :destroy]
+  before_action :set_upload, only: [:show, :edit, :update, :destroy, :popup]
 
   # GET /uploads
   # GET /uploads.json
@@ -10,6 +10,10 @@ class UploadsController < ApplicationController
   # GET /uploads/1
   # GET /uploads/1.json
   def show
+  end
+  
+  # GET /uploads/popup/1
+  def popup
   end
 
   # GET /uploads/new
